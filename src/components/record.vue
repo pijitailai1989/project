@@ -63,6 +63,7 @@ export default {
       position relative 
       cursor pointer
       background #FFF
+      border-radius 3px
       .view  
         display none
         margin 1px 5px 0 0

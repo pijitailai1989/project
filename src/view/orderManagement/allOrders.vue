@@ -3,7 +3,7 @@
       <el-row>
         <el-col :span="24">
             <div class="fx j-end operating-space">
-                <el-button  type="primary" size="mini" @click="dialogVisible = true;titleDialog='添加订单'">添加订单</el-button>
+                <y-button icon="el-icon-edit" size="13" @click="emitFun">添加订单</y-button>
             </div>
         </el-col>
         <el-col :span="24">
@@ -75,7 +75,7 @@
                     prop="status"
                     label="订单状态">
                     <template slot-scope="scope">
-                        <span>{{scope.row.status?'待付款':'已付款'}}</span>
+                        <span>{{scope.row.status==1?'待付款':'已付款'}}</span>
                     </template>
                 </el-table-column>
                 <el-table-column
@@ -92,8 +92,8 @@
                     label="操作"
                     width="100">
                     <template slot-scope="scope">
-                        <el-button type="text" @click="viewFun(scope.row)" size="small">查看</el-button>
-                        <el-button type="text" disabled size="small">编辑</el-button>
+                        <y-button color="#669934" text @click="viewFun(scope.row)" >查看</y-button>
+                        <y-button text disabled size="small">编辑</y-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -150,7 +150,10 @@ export default {
       handleCurrentChange(currentPage){
         this.saveOrderFun(currentPage,this.size)
       },
-      
+      emitFun(){
+        this.dialogVisible = true;
+        this.titleDialog='添加订单';
+      },
       saveOrderFun(pageNum,pageSize){
           this.loadGetOrderList({pageNum,pageSize}).then( success => {
                let {record,count} = this.orderObj ;

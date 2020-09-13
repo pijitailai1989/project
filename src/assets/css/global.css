@@ -61,7 +61,9 @@ a:link,a:visited,a:active,a:hover{text-decoration:none;color:inherit;}
     -webkit-transition:width .4s; /* Safari and Chrome */
     -o-transition:width .4s,; /* Opera */
 }
-    
+.buttons+.buttons{
+    margin-left:5px;
+}  
 .scrollbar::-webkit-scrollbar
   {
       width: 0px;
@@ -90,8 +92,10 @@ a:link,a:visited,a:active,a:hover{text-decoration:none;color:inherit;}
      line-height: 16px !important;
  }
  .el-form-item{
-    margin-bottom: 0px !important;
- }
+        margin-bottom: 15px !important;
+  }
+ 
+ 
  .el-menu-item.is-active,.el-pager li.active {
     color:#669934 !important;
 }

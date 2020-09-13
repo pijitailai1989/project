@@ -7,9 +7,8 @@
       </template>
       <template v-slot:btn>
         <div class="fx j-end">
-            <el-button @click="$emit('close',false);clearFun()" size="mini">取 消</el-button>
-            <el-button type="warning" @click="dialogForm(form)" size="mini" :disabled="view">确 定</el-button>
-        
+            <y-button size="13" icon="el-icon-error" @click="cancelFun">取 消</y-button>
+            <y-button size="13" icon="el-icon-success" @click="dialogForm(form)" :disabled="view" bg="#669934">确 定</y-button>
         </div>
       </template>
         <el-form :model="form">
@@ -177,6 +176,10 @@ export default {
               this.$message.error('订单录入失败！');
           })
       },
+      cancelFun(){
+          this.$emit('close',false) ;
+          this.clearFun() ;
+      }
   },
   created() {},
   mounted() {}

@@ -10,26 +10,27 @@ import axios from 'axios'
  *   prod: '线上环境配置'
  * }
  */
-  function conf (base = {}) {
-    if (process.env.NODE_ENV === 'development') { // 生产环境下
-      let env = process.env.ENV_CONFIG || 'dev'
-      return base[env] || base['dev']
-    }else if(process.env.NODE_ENV === 'production'){
-      let env = process.env.ENV_CONFIG || 'dev'
-      return base[env] || base['dev']
-    }
-    // 开发环境
+  // function conf (base = {}) {
+  //   if (process.env.NODE_ENV === 'development') {
+  //     let env = process.env.ENV_CONFIG || 'dev'
+  //     return base[env] || base['dev']
+  //   }else if(process.env.NODE_ENV === 'production'){
+  //     let env = process.env.ENV_CONFIG || 'dev'
+  //     return base[env] || base['dev']
+  //   }
     
-    return base['dev']
-  }
+  //   return base['dev']
+  // }
 
-  // PORTAL 接口
-  const POR_LOGIN_LOGOUT = conf({
-    dev:  'http://122.152.200.11:3030',
-    prod: 'https://kengine.kec-app.com:8443'
-  })
-  axios.defaults.baseURL = POR_LOGIN_LOGOUT
-  axios.defaults.timeout = 10000
+  // const POR_LOGIN_LOGOUT = conf({
+  //   dev:  'http://122.152.200.11:3030',
+  //   prod: 'https://kengine.kec-app.com:8443'
+  // })
+  // axios.defaults.baseURL = POR_LOGIN_LOGOUT ;
+
+  const baseUrl = process.env.BASE_URL ;
+  axios.defaults.baseURL = baseUrl ;
+  axios.defaults.timeout = 10000 ;
   // axios.defaults.withCredentials = true
   
   

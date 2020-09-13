@@ -102,7 +102,7 @@ import {mapState} from 'vuex'
    .box  
      position absolute
      background #fff
-     border-radius 5px
+     border-radius 3px
      .tops,.centers 
        padding 10px
        cursor pointer

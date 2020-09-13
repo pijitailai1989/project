@@ -15,7 +15,7 @@ module.exports = {
       //       target: 'http://122.152.200.11:3030',
       //        changeOrigin: true, 
       //        pathRewrite: { 
-      //          '^/api': '' 
+      //          '^/apis': '' 
       //          } 
       //   } 
     },
